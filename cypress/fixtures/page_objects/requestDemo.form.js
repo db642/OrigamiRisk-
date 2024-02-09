@@ -1,6 +1,6 @@
 class requestDemoForm {
     get firstNameInp(){
-        return cy.get('[name="FirstName")]')
+        return cy.get('[name="FirstName"]')
     }
     get lastNameInp(){
       return cy.get('[name="LastName"]')

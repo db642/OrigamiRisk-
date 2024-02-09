@@ -4,6 +4,6 @@ export const generateUserData = () => ({
   phoneNumber: faker.phone.number(),
   firstName: faker.person.firstName(),
   lastName: faker.person.lastName(),
-  company: "",
+  company: "Cypress",
   email: faker.internet.email(),
 });

@@ -3,6 +3,8 @@ import requestDemoForm from "../fixtures/page_objects/requestDemo.form";
 import { generateUserData } from "../helpers/fakerData";
 let userData;
 userData = generateUserData();
+const { registerCommand } = require('cypress-wait-for-stable-dom')
+registerCommand()
 
 describe("Demo", () => {
   beforeEach(() => {
@@ -11,6 +13,7 @@ describe("Demo", () => {
 
   it("Request Demo", () => {
     dashboardPage.requestDemoBtn.click();
+    cy.wait(1000)
     requestDemoForm.firstNameInp.type(userData.firstName);
     requestDemoForm.lastNameInp.type(userData.lastName);
     requestDemoForm.emailInp.type(userData.email);
