@@ -4,7 +4,7 @@ import platformMenuItems from "../fixtures/test_data/platformMenuItems.json"
 describe("Platform menu navigation", () => {
     beforeEach(() => {
       cy.visit("/");
-    });
+});
 
 it("verifies Platform Overview tab existence", () => {
     dashboardPage.platformTab.trigger("mouseover");
