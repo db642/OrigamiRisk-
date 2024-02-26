@@ -1,12 +1,12 @@
 import dashboardPage from "../fixtures/page_objects/dashboard.page";
-import platformMenuItems from "../fixtures/test_data/platformMenuItems.json"
+import platformMenuItems from "../fixtures/test_data/platformMenuItems.json";
 
 describe("Platform menu navigation", () => {
-    beforeEach(() => {
-      cy.visit("/");
-});
+  beforeEach(() => {
+    cy.visit("/");
+  });
 
-it("verifies Platform Overview tab existence", () => {
+  it("verifies Platform Overview tab existence", () => {
     dashboardPage.platformTab.trigger("mouseover");
     cy.contains(platformMenuItems.overview).click({ force: true });
     cy.url().should("include", "origami-platform-overview");
@@ -37,12 +37,16 @@ it("verifies Platform Overview tab existence", () => {
   });
   it("verifies P&C Claims Administration Solutions existence", () => {
     dashboardPage.platformTab.trigger("mouseover");
-    cy.contains(platformMenuItems.claimsAdministrationSolutions).click({ force: true });
+    cy.contains(platformMenuItems.claimsAdministrationSolutions).click({
+      force: true,
+    });
     cy.url().should("include", "claims-administration-system");
   });
   it("verifies P&C Policy Administration & Billing Solutions existence", () => {
     dashboardPage.platformTab.trigger("mouseover");
-    cy.contains(platformMenuItems.policyAdministrationBillingSolutions).click({force: true,});
+    cy.contains(platformMenuItems.policyAdministrationBillingSolutions).click({
+      force: true,
+    });
     cy.url().should("include", "policy-administration");
   });
   it("verifies Environment, Health & Safety (EHS) existence", () => {
@@ -62,7 +66,7 @@ it("verifies Platform Overview tab existence", () => {
   });
   it("verifies Risk Management Information Systems (RMIS) existence", () => {
     dashboardPage.platformTab.trigger("mouseover");
-    cy.contains(platformMenuItems.RMIS).click({force: true,});
+    cy.contains(platformMenuItems.RMIS).click({ force: true });
     cy.url().should("include", "risk-management-information-system-rmis");
   });
 });
